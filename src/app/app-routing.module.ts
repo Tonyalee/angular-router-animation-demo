@@ -4,13 +4,21 @@ import { FirstComponent } from './first.component';
 import { SecondComponent } from './second.component';
 
 const routes: Routes = [
-  { path: 'first-component', component: FirstComponent, data: {animation: 'HomePage'} },
-  { path: 'second-component', component: SecondComponent, data: {animation: 'AboutPage' },
+  {
+    path: 'first-component',
+    component: FirstComponent,
+    data: { animation: 'firstPage' },
+  },
+  {
+    path: 'second-component',
+    component: SecondComponent,
+    data: { animation: 'secondPage' },
+  },
 ];
 
 // configures NgModule imports and exports
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
