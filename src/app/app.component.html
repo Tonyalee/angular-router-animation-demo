@@ -1,14 +1,16 @@
-<h1>Angular Router App</h1>
-<!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
-<nav class="nav">
-  <div>
-    <a class="first-btn" routerLink="/first-component">First Component</a>
+<div class="wrapper">
+  <h1>Angular Router App</h1>
+  <!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
+  <nav class="nav">
+    <div>
+      <a class="first-btn" routerLink="/first-component">First Component</a>
+    </div>
+    <div>
+      <a class="second-btn" routerLink="/second-component">Second Component</a>
+    </div>
+  </nav>
+  <!-- The routed views render in the <router-outlet>-->
+  <div class="container" [@routeAnimations]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
   </div>
-  <div>
-    <a class="second-btn" routerLink="/second-component">Second Component</a>
-  </div>
-</nav>
-<!-- The routed views render in the <router-outlet>-->
-<div [@routeAnimations]="prepareRoute(outlet)">
-  <router-outlet #outlet="outlet"></router-outlet>
 </div>
