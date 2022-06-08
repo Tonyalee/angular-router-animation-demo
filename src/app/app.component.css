@@ -1,0 +1,29 @@
+p {
+  font-family: Lato;
+}
+
+.nav {
+  display: flex;
+  padding: 10px 0;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+  transition: 0.3s all;
+}
+
+.first-btn {
+  background-color: rgb(10, 143, 99);
+}
+
+.second-btn {
+  background-color: rgb(156, 58, 91);
+}
+
+a:hover {
+  opacity: 0.8;
+}
