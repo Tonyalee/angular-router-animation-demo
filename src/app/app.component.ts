@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { slideInAnimation } from './animations/router-animation';
+import { AnimationEvent } from '@angular/animations';
 
 @Component({
   selector: 'my-app',
@@ -17,4 +18,12 @@ export class AppComponent {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {}
+
+  aniStart($event: AnimationEvent) {
+    console.log('wallet aniStart', $event);
+  }
+
+  aniEnd($event: AnimationEvent) {
+    console.log('wallet aniEnd', $event);
+  }
 }

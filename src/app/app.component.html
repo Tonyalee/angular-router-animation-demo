@@ -10,7 +10,12 @@
     </div>
   </nav>
   <!-- The routed views render in the <router-outlet>-->
-  <div class="container" [@routeAnimations]="prepareRoute(outlet)">
+  <div
+    class="container"
+    [@routeAnimations]="prepareRoute(outlet)"
+    (@routeAnimations.start)="aniStart($event)"
+    (@routeAnimations.done)="aniEnd($event)"
+  >
     <router-outlet #outlet="outlet"></router-outlet>
   </div>
 </div>
