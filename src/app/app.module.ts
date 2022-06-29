@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { FirstComponent } from './first.component';
 import { SecondComponent } from './second.component';
+import { ThirdComponent } from './third.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import { SecondComponent } from './second.component';
     FormsModule,
     AppRoutingModule,
   ],
-  declarations: [AppComponent, FirstComponent, SecondComponent],
+  declarations: [AppComponent, FirstComponent, SecondComponent, ThirdComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

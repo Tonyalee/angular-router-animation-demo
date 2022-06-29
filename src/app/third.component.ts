@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'first',
-  template: `<h1 class="wrap">First Page</h1>`,
+  selector: 'third',
+  template: `<h1 class="wrap">Third Page</h1>`,
   styles: [
     `
     .wrap { 
-      background-color: rgba(190, 230, 216,.7); 
+      background-color: rgba(80, 230, 216, .7); 
       width: 100%;
       height: 300px; padding: 10px; 
       border-radius: 5px;
@@ -16,6 +16,6 @@ import { Component, Input } from '@angular/core';
     }`,
   ],
 })
-export class FirstComponent {
+export class ThirdComponent {
   @Input() name: string;
 }

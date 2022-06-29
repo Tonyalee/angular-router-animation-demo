@@ -10,10 +10,14 @@ import {
 
 // Routable animations
 export const slideInAnimation = trigger('routeAnimations', [
-  transition('tab1 => tab2', slideTo('left')),
-  transition('tab2 => tab1', slideTo('right')),
-  transition('tab1 => tab2', slideInLeft()),
-  transition('tab2 => tab1', slideInRight()),
+  // transition('tab1 => tab2', slideTo('left')),
+  // transition('tab2 => tab1', slideTo('right')),
+  transition('tab1 => tab2', slideInRight()),
+  transition('tab1 => tab3', slideInRight()),
+  transition('tab2 => tab3', slideInRight()),
+  transition('tab2 => tab1', slideInLeft()),
+  transition('tab3 => tab1', slideInLeft()),
+  transition('tab3 => tab2', slideInLeft()),
 ]);
 
 function slideTo(direction: string) {
@@ -57,26 +61,22 @@ function slideInLeft() {
     query(':enter', [
       style({
         transform: 'translateX(-100%)',
+        display: 'block',
       }),
-      animate(
-        '500ms',
-        style({
-          transform: 'translateX(0)',
-          display: 'flex',
-        })
-      ),
     ]),
     query(':leave', [
       style({
         transform: 'translateX(0)',
-        display: 'flex',
+        display: 'block',
       }),
-      animate(
-        '500ms',
-        style({
-          transform: 'translateX(-100%)',
-        })
-      ),
+    ]),
+    group([
+      query(':leave', [
+        animate('300ms ease', style({ transform: 'translateX(100%)' })),
+      ]),
+      query(':enter', [
+        animate('300ms ease', style({ transform: 'translateX(0)' })),
+      ]),
     ]),
   ];
 }
@@ -86,26 +86,22 @@ function slideInRight() {
     query(':enter', [
       style({
         transform: 'translateX(100%)',
+        display: 'block',
       }),
-      animate(
-        '500ms',
-        style({
-          transform: 'translateX(0)',
-          display: 'flex',
-        })
-      ),
     ]),
     query(':leave', [
       style({
         transform: 'translateX(0)',
-        display: 'flex',
+        display: 'block',
       }),
-      animate(
-        '500ms',
-        style({
-          transform: 'translateX(100%)',
-        })
-      ),
+    ]),
+    group([
+      query(':leave', [
+        animate('300ms ease', style({ transform: 'translateX(-100%)' })),
+      ]),
+      query(':enter', [
+        animate('300ms ease', style({ transform: 'translateX(0%)' })),
+      ]),
     ]),
   ];
 }

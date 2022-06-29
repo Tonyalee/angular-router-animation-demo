@@ -11,9 +11,11 @@
 
 .container {
   display: block;
+  position: relative;
   width: 100%;
   height: 100%;
   background-color: #eaeaea;
+  border: 1px solid red;
 }
 
 p {
@@ -40,6 +42,10 @@ a {
 
 .second-btn {
   background-color: rgb(156, 58, 91);
+}
+
+.third-btn {
+  background-color: rgb(80, 125, 143);
 }
 
 a:hover {
