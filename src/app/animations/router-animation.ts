@@ -10,8 +10,8 @@ import {
 
 // Routable animations
 export const slideInAnimation = trigger('routeAnimations', [
-  transition('secondPage => firstPage', slideTo('left')),
-  transition('firstPage => secondPage', slideTo('right')),
+  transition('tab1 => tab2', slideTo('left')),
+  transition('tab2 => tab1', slideTo('right')),
 ]);
 
 function slideTo(direction: string) {

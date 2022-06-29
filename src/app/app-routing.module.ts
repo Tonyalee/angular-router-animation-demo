@@ -7,12 +7,12 @@ const routes: Routes = [
   {
     path: 'first-component',
     component: FirstComponent,
-    data: { animation: 'firstPage' },
+    data: { animation: 'tab1' },
   },
   {
     path: 'second-component',
     component: SecondComponent,
-    data: { animation: 'secondPage' },
+    data: { animation: 'tab2' },
   },
 ];
 
