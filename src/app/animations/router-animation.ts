@@ -12,6 +12,8 @@ import {
 export const slideInAnimation = trigger('routeAnimations', [
   transition('tab1 => tab2', slideTo('left')),
   transition('tab2 => tab1', slideTo('right')),
+  transition('tab1 => tab2', slideInLeft()),
+  transition('tab2 => tab1', slideInRight()),
 ]);
 
 function slideTo(direction: string) {
@@ -47,5 +49,63 @@ function slideTo(direction: string) {
     // Required only if you have child animations on the page
     // query(':leave', animateChild()),
     // query(':enter', animateChild()),
+  ];
+}
+
+function slideInLeft() {
+  return [
+    query(':enter', [
+      style({
+        transform: 'translateX(-100%)',
+      }),
+      animate(
+        '500ms',
+        style({
+          transform: 'translateX(0)',
+          display: 'flex',
+        })
+      ),
+    ]),
+    query(':leave', [
+      style({
+        transform: 'translateX(0)',
+        display: 'flex',
+      }),
+      animate(
+        '500ms',
+        style({
+          transform: 'translateX(-100%)',
+        })
+      ),
+    ]),
+  ];
+}
+
+function slideInRight() {
+  return [
+    query(':enter', [
+      style({
+        transform: 'translateX(100%)',
+      }),
+      animate(
+        '500ms',
+        style({
+          transform: 'translateX(0)',
+          display: 'flex',
+        })
+      ),
+    ]),
+    query(':leave', [
+      style({
+        transform: 'translateX(0)',
+        display: 'flex',
+      }),
+      animate(
+        '500ms',
+        style({
+          transform: 'translateX(100%)',
+        })
+      ),
+    ]),
   ];
 }
